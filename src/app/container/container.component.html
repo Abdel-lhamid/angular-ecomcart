@@ -1,0 +1,20 @@
+<div class = "ecomcart-product-container">
+    <!--<img [src]="product.prImage">
+    <p>Name : {{product.name}}</p> --string interpolation--
+    <p>Price : {{ '$' + product.price}}</p> string interpolation--
+    <p>Color : {{product.color}}</p> <!--string interpolation--
+    <p>Discounted Price: {{ getDiscountedPrice().toFixed(2) }}</p> <!--string interpolation--
+    <p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' item left' : 'Not in stock'}}</p> <!--string interpolation--
+    <button (click)="decrementCartvalue()" [disabled]="!(addToCart > 0)">-</button><!--data binding--
+    <span>{{addToCart}}</span>
+    <button (click)="incrementCartvalue()" [disabled]="!(product.inStock > 0) || addToCart == product.inStock">+</button><!--data binding-->
+    <!--<input [value]="actor" (input)="onActorChange($event)">--><!--data binding there is 2 ways to do it either with [] or with bind.attribute-->
+    <!--<p>{{ actor }}</p>-->
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+    <!--<div *ngFor="let item of listOfString">
+        <p>curent item of array is: {{ item }}</p>
+    </div>-->
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+  <product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></product-detail>
+</div>
+
